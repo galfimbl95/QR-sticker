@@ -1,0 +1,37 @@
+.hide {
+    display: none;
+}
+
+body {
+    margin: 0px;
+}
+
+#printSetContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#printSetContainer p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.sticker td {
+    padding: 6px;
+    padding-top: 15px;
+}
+
+.break{
+    page-break-after: always;
+    page-break-inside: avoid;
+}
+
+
+div.page {
+    width: 60mm;
+    height: 30mm;
+    font-size: 12pt;
+    color: #000;
+    padding: 2mm 10mm 7mm 10mm;
+}

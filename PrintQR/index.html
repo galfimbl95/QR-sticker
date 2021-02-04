@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrintQR</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/qrcode.js"></script>
+    <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/papaparse.js"></script>
+
+</head>
+
+<body>
+    <div id='headerContainer' class="container" style="margin-top: 15px;">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <button type="button" class="btn btn-primary btn-lg" onclick="showCsvTableContainer()">Сформировать
+                    этикетки из
+                    CSV</button>
+            </div>
+
+            <div class="col-auto">
+                <button type="button" class="btn btn-primary btn-lg">Сформировать этикетку вручную</button>
+            </div>
+
+
+            <!-- <div id="qrcode" style="width:100px; height:100px; margin:10px;"></div> -->
+        </div>
+
+
+    </div>
+
+    <div id='csvTableContainer' class="container hide" style="margin-top: 10px;">
+        <div class="row justify-content-center">
+            <div class="col-auto"><input type="file" id="input" class="btn btn-light"></div>
+            <div class="col-auto"><button class="btn btn-secondary" onclick="readCSV()">Прочитать CSV</button></div>
+            <div class="col-auto"><button class="btn btn-secondary" onclick="createPrintSet()">Сформировать
+                    этикетки</button></div>
+            <div class="col-auto"><button class="btn btn-secondary" onclick="goToPrint()">Перейти к печати</button>
+            </div>
+
+        </div>
+        <table id='csvTable' style="margin: auto; margin-top: 15px;" class="table table-sm table-bordered">
+            <thead>
+                <th>Номер</th>
+                <th>Обозначние</th>
+                <th>Криптохвост</th>
+                <th>Марка</th>
+                <th>Размер</th>
+            </thead>
+            <tbody id='csvTableBody'></tbody>
+        </table>
+
+    </div>
+    <div id='printSetContainerParent'>
+        <div id='printSetContainer' class='container'></div>
+    </div>
+
+</body>
+
+</html>
